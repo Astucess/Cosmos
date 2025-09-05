@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
 import { NAV_LINKS, SOCIALS } from "@/constants";
 
 export const Navbar = () => {
@@ -88,3 +87,4 @@ export const Navbar = () => {
     </div>
   );
 };
+

@@ -1,11 +1,5 @@
 import Link from "next/link";
-import { FOOTER_DATA as FOOTER_DATA_RAW } from "@/constants";
-
-// Ensure TypeScript knows the structure
-type FooterLink = { label: string; href: string };
-type FooterColumn = { title: string; links: FooterLink[] };
-
-const FOOTER_DATA: FooterColumn[] = FOOTER_DATA_RAW ?? [];
+import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (

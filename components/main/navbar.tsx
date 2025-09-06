@@ -21,8 +21,11 @@ export const Navbar = () => {
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:font-bold ml-[10px] text-gray-300">Zanix</div>
+          <div className="hidden md:flex md:font-bold ml-[10px] text-gray-300">
+            Zanix
+          </div>
         </Link>
+
         {/* Web Navbar */}
         <div className="hidden md:flex flex-1 h-full flex-row items-center justify-center">
           <div className="flex items-center justify-center gap-14 w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
@@ -36,16 +39,18 @@ export const Navbar = () => {
               </Link>
             ))}
           </div>
-          {/* Hamburger Menu */}
-          <button
-            className="md:hidden text-white focus:outline-none text-4xl"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            ☰
-          </button>
         </div>
+
+        {/* Hamburger Menu */}
+        <button
+          className="md:hidden text-white focus:outline-none text-4xl"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        >
+          ☰
+        </button>
       </div>
+
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
@@ -61,8 +66,9 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
+
             {/* Optional Source Code Link */}
-            {/* <Link
+            <Link
               href={LINKS.sourceCode}
               target="_blank"
               rel="noreferrer noopener"
@@ -70,8 +76,9 @@ export const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Source Code
-            </Link> */}
+            </Link>
           </div>
+
           {/* Social Icons */}
           <div className="flex justify-center gap-6 mt-6">
             {(SOCIALS ?? []).map(({ link, name, icon: Icon }) => (

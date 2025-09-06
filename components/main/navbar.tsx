@@ -2,10 +2,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS, SOCIALS } from "@/constants";
+import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
       {/* Navbar Container */}
@@ -22,33 +23,35 @@ export const Navbar = () => {
           />
           <div className="hidden md:flex md:font-bold ml-[10px] text-gray-300">Zanix</div>
         </Link>
-
         {/* Web Navbar */}
-       <div className="hidden md:flex flex-1 h-full flex-row items-center justify-center">
-      <div className="flex items-center justify-center gap-14 w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-  {NAV_LINKS.map((link) => (
-    <Link key={link.title} href={link.link} className="cursor-pointer hover:text-[rgb(112,66,248)] transition">
-      {link.title}
-    </Link>
-  ))}
-</div>
-
+        <div className="hidden md:flex flex-1 h-full flex-row items-center justify-center">
+          <div className="flex items-center justify-center gap-14 w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+            {(NAV_LINKS ?? []).map((link) => (
+              <Link
+                key={link.title}
+                href={link.link}
+                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
           {/* Hamburger Menu */}
           <button
             className="md:hidden text-white focus:outline-none text-4xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             ☰
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
           {/* Links */}
           <div className="flex flex-col items-center gap-4">
-            {NAV_LINKS.map((link) => (
+            {(NAV_LINKS ?? []).map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
@@ -58,7 +61,7 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-            {/* Remove this block if you want no Source Code link: */}
+            {/* Uncomment below if you want a Source Code link */}
             {/* <Link
               href={LINKS.sourceCode}
               target="_blank"
@@ -71,12 +74,13 @@ export const Navbar = () => {
           </div>
           {/* Social Icons */}
           <div className="flex justify-center gap-6 mt-6">
-            {SOCIALS.map(({ link, name, icon: Icon }) => (
+            {(SOCIALS ?? []).map(({ link, name, icon: Icon }) => (
               <Link
+                key={name}
                 href={link}
                 target="_blank"
                 rel="noreferrer noopener"
-                key={name}
+                aria-label={name}
               >
                 <Icon className="h-8 w-8 text-white" />
               </Link>
@@ -87,4 +91,3 @@ export const Navbar = () => {
     </div>
   );
 };
-

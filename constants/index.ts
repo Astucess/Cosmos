@@ -1,3 +1,4 @@
+// constants/index.ts
 import { FaYoutube, FaFacebook } from "react-icons/fa";
 import {
   RxDiscordLogo,
@@ -7,28 +8,45 @@ import {
   RxLinkedinLogo,
 } from "react-icons/rx";
 
-// Extra links if needed (source code / portfolio / contact etc.)
 export const LINKS = {
   sourceCode: "https://github.com/astucess",
-  portfolio: "https://your-portfolio.com",
-  contact: "mailto:you@example.com",
 };
 
-// Navigation links
 export const NAV_LINKS = [
   { title: "About me", link: "#about-me" },
   { title: "Skills", link: "#skills" },
   { title: "Projects", link: "#projects" },
-  { title: "Contact", link: "#contact" },
-];
+] as const;
 
-// Social icons
 export const SOCIALS = [
-  { name: "YouTube", icon: FaYoutube, link: "https://youtube.com" },
-  { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/astucess" },
-  { name: "Discord", icon: RxDiscordLogo, link: "https://discord.com" },
   { name: "Instagram", icon: RxInstagramLogo, link: "https://instagram.com" },
-  { name: "Twitter", icon: RxTwitterLogo, link: "https://twitter.com" },
-  { name: "LinkedIn", icon: RxLinkedinLogo, link: "https://linkedin.com" },
   { name: "Facebook", icon: FaFacebook, link: "https://facebook.com" },
-];
+  { name: "Twitter", icon: RxTwitterLogo, link: "https://twitter.com" },
+] as const;
+
+export const FOOTER_DATA = [
+  {
+    title: "Community",
+    links: [
+      { label: "YouTube", href: "https://youtube.com" },
+      { label: "GitHub", href: "https://github.com/astucess" },
+      { label: "Discord", href: "https://discord.com" },
+    ],
+  },
+  {
+    title: "Social Media",
+    links: [
+      { label: "Instagram", href: "https://instagram.com" },
+      { label: "Twitter", href: "https://twitter.com" },
+      { label: "LinkedIn", href: "https://linkedin.com" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { label: "Become Sponsor", href: "https://youtube.com" },
+      { label: "Learning about me", href: "https://example.com" },
+      { label: "Contact Me", href: "mailto:contact@example.com" },
+    ],
+  },
+] as const;

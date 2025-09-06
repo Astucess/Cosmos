@@ -3,34 +3,35 @@ import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
-      <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-          {(FOOTER_DATA ?? []).map((column) => (
-            <div
-              key={column.title}
-              className="min-w-[200px] h-auto flex flex-col items-center justify-start"
-            >
-              <h3 className="font-bold text-[16px]">{column.title}</h3>
-              {column.data.map(({ icon: Icon, name, link }) => (
-                <Link
-                  key={`${column.title}-${name}`}
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="flex flex-row items-center my-[15px]"
-                >
-                  {Icon && <Icon className="mr-2 h-5 w-5" />}
-                  <span className="text-[15px] ml-[6px]">{name}</span>
-                </Link>
+    <footer className="bg-black text-gray-300 py-10 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {FOOTER_DATA.map((column) => (
+          <div
+            key={column.title}
+            className="min-w-[200px] flex flex-col items-start"
+          >
+            <h3 className="font-bold text-[16px] mb-4 text-white">
+              {column.title}
+            </h3>
+            <ul className="space-y-2">
+              {column.links.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-white transition"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
               ))}
-            </div>
-          ))}
-        </div>
-        <div className="mb-[20px] text-[15px] text-center">
-          &copy; Zanix {new Date().getFullYear()} Inc. All rights reserved.
-        </div>
+            </ul>
+          </div>
+        ))}
       </div>
-    </div>
+
+      <div className="mt-10 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} MyPortfolio. All rights reserved.
+      </div>
+    </footer>
   );
 };

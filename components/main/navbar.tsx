@@ -1,100 +1,95 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
-      {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
-        {/* Logo + Name */}
-        <Link href="#about-me" className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={70}
-            height={70}
-            draggable={false}
-            className="cursor-pointer"
-          />
-          <div className="hidden md:flex md:font-bold ml-[10px] text-gray-300">
-            Zanix
-          </div>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.png" alt="Logo" width={40} height={40} />
+          <span className="font-bold text-white text-lg">MyPortfolio</span>
         </Link>
 
-        {/* Web Navbar */}
-        <div className="hidden md:flex flex-1 h-full flex-row items-center justify-center">
-          <div className="flex items-center justify-center gap-14 w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            {(NAV_LINKS ?? []).map((link) => (
-              <Link
-                key={link.title}
-                href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
-              >
-                {link.title}
-              </Link>
-            ))}
-          </div>
+        {/* Desktop menu */}
+        <div className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((nav) => (
+            <Link
+              key={nav.title}
+              href={nav.link}
+              className="text-gray-300 hover:text-white transition"
+            >
+              {nav.title}
+            </Link>
+          ))}
         </div>
 
-        {/* Hamburger Menu */}
+        {/* Socials (desktop only) */}
+        <div className="hidden md:flex items-center gap-4">
+          {SOCIALS.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.name}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition"
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Mobile menu button */}
         <button
-          className="md:hidden text-white focus:outline-none text-4xl"
+          className="md:hidden text-gray-300"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          ☰
+          {isMobileMenuOpen ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile dropdown */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
-          {/* Links */}
-          <div className="flex flex-col items-center gap-4">
-            {(NAV_LINKS ?? []).map((link) => (
-              <Link
-                key={link.title}
-                href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.title}
-              </Link>
-            ))}
-
-            {/* Optional Source Code Link */}
+        <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-gray-800 px-6 py-4 flex flex-col gap-4">
+          {NAV_LINKS.map((nav) => (
             <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+              key={nav.title}
+              href={nav.link}
+              className="text-gray-300 hover:text-white transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Source Code
+              {nav.title}
             </Link>
-          </div>
+          ))}
 
-          {/* Social Icons */}
-          <div className="flex justify-center gap-6 mt-6">
-            {(SOCIALS ?? []).map(({ link, name, icon: Icon }) => (
-              <Link
-                key={name}
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label={name}
-              >
-                <Icon className="h-8 w-8 text-white" />
-              </Link>
-            ))}
+          <div className="flex gap-4 mt-4">
+            {SOCIALS.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  <Icon size={20} />
+                </a>
+              );
+            })}
           </div>
         </div>
       )}
-    </div>
+    </nav>
   );
 };

@@ -7,10 +7,14 @@ import {
   RxLinkedinLogo,
 } from "react-icons/rx";
 
+// Extra links if needed (source code / portfolio / contact etc.)
 export const LINKS = {
   sourceCode: "https://github.com/astucess",
+  portfolio: "https://your-portfolio.com",
+  contact: "mailto:you@example.com",
 };
 
+// Navigation links
 export const NAV_LINKS = [
   { title: "About me", link: "#about-me" },
   { title: "Skills", link: "#skills" },
@@ -18,33 +22,13 @@ export const NAV_LINKS = [
   { title: "Contact", link: "#contact" },
 ];
 
-//  define proper types so TS knows what FOOTER_DATA contains
-type FooterColumn = {
-  title: string;
-  data: {
-    name: string;
-    icon: React.ComponentType<{ size?: number; className?: string }>;
-    link: string;
-  }[];
-};
-
-export const FOOTER_DATA: FooterColumn[] = [
-  {
-    title: "Community",
-    data: [
-      { name: "YouTube", icon: FaYoutube, link: "https://youtube.com" },
-      { name: "GitHub", icon: RxGithubLogo, link: "https://github.com" },
-      { name: "Discord", icon: RxDiscordLogo, link: "https://discord.com" },
-    ],
-  },
-  {
-    title: "Social Media",
-    data: [
-      { name: "Instagram", icon: RxInstagramLogo, link: "https://instagram.com" },
-      { name: "Twitter", icon: RxTwitterLogo, link: "https://twitter.com" },
-      { name: "Linkedin", icon: RxLinkedinLogo, link: "https://linkedin.com" },
-      { name: "Facebook", icon: FaFacebook, link: "https://facebook.com" },
-    ],
-  },
+// Social icons
+export const SOCIALS = [
+  { name: "YouTube", icon: FaYoutube, link: "https://youtube.com" },
+  { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/astucess" },
+  { name: "Discord", icon: RxDiscordLogo, link: "https://discord.com" },
+  { name: "Instagram", icon: RxInstagramLogo, link: "https://instagram.com" },
+  { name: "Twitter", icon: RxTwitterLogo, link: "https://twitter.com" },
+  { name: "LinkedIn", icon: RxLinkedinLogo, link: "https://linkedin.com" },
+  { name: "Facebook", icon: FaFacebook, link: "https://facebook.com" },
 ];
-S

@@ -61,7 +61,7 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-            {/* Uncomment below if you want a Source Code link */}
+            {/* Optional Source Code Link */}
             {/* <Link
               href={LINKS.sourceCode}
               target="_blank"

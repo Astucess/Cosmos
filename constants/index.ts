@@ -64,7 +64,7 @@ export const PROJECTS = [
     title: "Modern Websites with Advanced Animations",
     description:
       "PlutoWebWorks is your creative powerhouse for building stunning, modern, and responsive websites. It blends cinematic design with smooth animations and top-tier performance. The goal is to deliver sleek, professional websites that stand out in a crowded digital world. It’s not just web design—it’s a full visual experience.",
-    image: "/projects/project-1.png", // ✅ from /public/projects
+    image: "/projects/project-1.png",
     link: "https://astucess.github.io/PlutoWebWorks.com/",
   },
   {
@@ -97,3 +97,8 @@ export const PROJECTS = [
   },
 ] as const;
 
+// Skills
+export const FRONTEND_SKILL = ["HTML", "CSS", "JavaScript", "React", "Vue", "Tailwind"];
+export const BACKEND_SKILL = ["Node.js", "Express", "Django", "Spring Boot", "Python", "Java"];
+export const FULLSTACK_SKILL = ["MERN Stack", "MEAN Stack", "Django + React", "Spring Boot + React"];
+export const OTHER_SKILL = ["Git", "Docker", "Figma", "Photoshop", "CI/CD"];

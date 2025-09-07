@@ -61,38 +61,39 @@ export const FOOTER_DATA = [
 // Projects
 export const PROJECTS = [
   {
-    title: "Zanix Portfolio",
-    description: "Personal portfolio website built with Next.js, TailwindCSS, and Three.js animations.",
-    link: "https://zanix.dev",
+    title: "Modern Websites with Advanced Animations",
+    description:
+      "PlutoWebWorks is your creative powerhouse for building stunning, modern, and responsive websites. It blends cinematic design with smooth animations and top-tier performance. The goal is to deliver sleek, professional websites that stand out in a crowded digital world. It’s not just web design—it’s a full visual experience.",
+    image: "/projects/project-1.png", // ✅ from /public/projects
+    link: "https://astucess.github.io/PlutoWebWorks.com/",
   },
   {
-    title: "PlutoWebWorks",
-    description: "A sleek web development studio site showcasing modern animations and responsive design.",
-    link: "https://plutowebworks.com",
+    title: "Space Themed Website",
+    description:
+      "Astucess.xyz is an innovative platform created to merge smart ideas with real business success. It’s designed to provide tools, resources, or services that simplify work and boost productivity. The brand uses a minimal and futuristic .xyz identity to stay unique. At its core, it’s about helping creators and businesses grow smarter, not harder.",
+    image: "/projects/project-2.png",
+    link: "https://astucess.github.io/astucess.xyz/",
   },
   {
-    title: "Astucess.xyz",
-    description: "A full-stack platform with advanced UI/UX, deployed on Render.",
-    link: "https://astucess.xyz",
-  },
-  {
-    title: "Portfolio.com",
-    description: "Custom portfolio site with smooth navigation and integrated social links.",
-    link: "https://portfolio.com",
-  },
-  {
-    title: "Portfolio.xyz",
-    description: "Minimalistic portfolio with grid-based layout and light/dark modes.",
-    link: "https://portfolio.xyz",
+    title: "Portfolio",
+    description:
+      "Portfolio.xyz is the experimental and creative spin on your personal showcase. It’s where you test bold layouts, futuristic animations, and interactive design ideas. This site reflects your innovative side. It’s a playground to show the world you don’t just follow trends—you set them.",
+    image: "/projects/project-3.png",
+    link: "https://astucess.github.io/Portfolio.xyz/",
   },
   {
     title: "Pluto Voyage",
-    description: "Creative project with advanced preloader effects and animations.",
-    link: "https://plutovoyage.com",
+    description:
+      "Pluto Voyage is a next-gen web experience that feels cinematic from the very first click. It features advanced preloader effects and seamless animations that make transitions smooth and engaging. The design is futuristic, minimal, and crafted to keep users hooked as they navigate. It’s not just a website—it’s an interactive journey through creativity.",
+    image: "/projects/project-4.png",
+    link: "https://pluto-voyage-com.vercel.app/",
   },
   {
-    title: "Galaxy Preloader",
-    description: "3D galaxy preloader built using Three.js for interactive animations.",
-    link: "https://github.com/astucess/galaxy-preloader",
+    title: "Next.js Portfolio",
+    description:
+      "Portfolio.com is your professional identity on the web, showcasing your skills, projects, and creativity. It serves as a digital resume while also being a live demo of your talent. Every section is crafted to tell your story and attract opportunities. It’s more than a portfolio—it’s a personal brand statement.",
+    image: "/projects/project-5.png",
+    link: "https://portfoliocom-nine.vercel.app/",
   },
-];
+] as const;
+

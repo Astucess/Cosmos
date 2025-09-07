@@ -11,7 +11,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold">
-          MyPortfolio
+          Zanix
         </Link>
 
         {/* Desktop Menu */}

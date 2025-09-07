@@ -97,8 +97,15 @@ export const PROJECTS = [
   },
 ] as const;
 
-// Skills
+// Skills arrays
 export const FRONTEND_SKILL = ["HTML", "CSS", "JavaScript", "React", "Vue", "Tailwind"];
 export const BACKEND_SKILL = ["Node.js", "Express", "Django", "Spring Boot", "Python", "Java"];
 export const FULLSTACK_SKILL = ["MERN Stack", "MEAN Stack", "Django + React", "Spring Boot + React"];
 export const OTHER_SKILL = ["Git", "Docker", "Figma", "Photoshop", "CI/CD"];
+
+// Skill data for components
+export const SKILL_DATA = [
+  { category: "Frontend", skills: FRONTEND_SKILL },
+  { category: "Backend", skills: BACKEND_SKILL },
+  { category: "Fullstack", skills: FULLSTACK_SKILL },
+  { category: "Other", skills: OTHER_SKILL },
